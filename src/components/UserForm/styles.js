@@ -11,18 +11,20 @@ export const FormWrap = styled.form`
 `
 
 export const LogoText = styled.h1`
-  font-size: 3.8rem;
-  font-family: var(--patua);
-  color: var(--dark-grey);
-  line-height: 1;
-  padding-bottom: 30px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+  font-size: 4.8rem;
+  letter-spacing: -2px;
+  font-family: var(--patua);
+  color: var(--dark-grey);
+  line-height: 1;
+  
+  padding-bottom: 30px;
   text-shadow: 2px 2px white;
-
   border-bottom: 1px solid var(--grey);
+
 
   & > svg {
     margin-bottom: 10px;
@@ -32,7 +34,7 @@ export const LogoText = styled.h1`
 `
 
 export const Title = styled.h2`
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 900;
   margin-bottom: 10px;
   text-shadow: 2px 2px white;
@@ -73,6 +75,6 @@ export const Actions = styled.div`
 
 export const ErrorMessage = styled.p`
   padding-top: 15px;
-  color: var(--wine);
+  color: var(--pink);
   text-align: center;
 `

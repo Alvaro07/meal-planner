@@ -30,7 +30,7 @@ export const UserForm = ({ title, subTitle, onSubmit, isLoading, errorFirebase }
     <FormWrap onSubmit={handleSubmit}>
 
       <LogoText>
-        <Logo size='64' />Meal Planner
+        <Logo size='72' />Meal Planner
       </LogoText>
       <Title>{title}</Title>
       <SubTitle>{subTitle}</SubTitle>
@@ -57,7 +57,7 @@ export const UserForm = ({ title, subTitle, onSubmit, isLoading, errorFirebase }
         </>
       )}
 
-      {isLoading && <Loader fullContainer opacityBg />}
+      {isLoading && <Loader fullContainer opacityBg fixed />}
 
       {error && <ErrorMessage>{error}</ErrorMessage>}
       {errorFirebase && <ErrorMessage>{errorFirebase}</ErrorMessage>}
