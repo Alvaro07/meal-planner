@@ -33,7 +33,7 @@ export const Login = () => {
     <UserForm
       isLoading={loading}
       title='Login'
-      subTitle='Enter your email & Password and try our fully featured instafake image platform.'
+      subTitle='Enter your email & Password and try our fully featured Planner Menu platform.'
       onSubmit={data => onLogin(data)}
       errorFirebase={error}
     />

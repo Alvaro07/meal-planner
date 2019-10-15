@@ -7,32 +7,45 @@ export const FormWrap = styled.form`
   max-width: 420px;
   position: relative;
   padding: 30px;
-  background-color: white;
   border-radius: 5px;
 `
 
-export const Logo = styled.h1`
+export const LogoText = styled.h1`
   font-size: 3.8rem;
-  font-family: var(--pacifico);
+  font-family: var(--patua);
   color: var(--dark-grey);
   line-height: 1;
-  text-align: center;
   padding-bottom: 30px;
-  margin-bottom: 30px;
-  border-bottom: 1px dashed var(--grey);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-shadow: 2px 2px white;
+
+  border-bottom: 1px solid var(--grey);
+
+  & > svg {
+    margin-bottom: 10px;
+    -webkit-filter: drop-shadow( 2px 2px 0 white);
+    filter: drop-shadow( 2px 2px 0 white);
+  }
 `
 
 export const Title = styled.h2`
   font-size: 20px;
-  font-family: var(--roboto);
   font-weight: 900;
   margin-bottom: 10px;
+  text-shadow: 2px 2px white;
+
+  padding-top: 30px;
+  border-top: 1px solid white;
 `
 
 export const SubTitle = styled.p`
   font-size: 14px;
   display: block;
   padding-bottom: 20px;
+  text-shadow: 1px 1px white;
 `
 
 export const Input = styled.input`
@@ -41,7 +54,7 @@ export const Input = styled.input`
   appearance: none;
 
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   padding: 12px 8px;
   border-radius: 2px;
   border: 1px solid var(--grey);
