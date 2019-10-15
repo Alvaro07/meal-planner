@@ -69,7 +69,9 @@ class Firebase {
             .doc(userName)
             .set({
               displayName: userName,
-              email: email
+              email: email,
+              menu: [],
+              shopList: []
             })
             .then(() => {
               this.auth.currentUser.updateProfile({ displayName: userName }).then(() => resolve())
