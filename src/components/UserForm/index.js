@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { useInputValue } from '../../hooks/useInputValue'
 import { Button } from '../Button'
 import { Loader } from '../Loader'
-import { FormWrap, Logo, Input, Title, SubTitle, Actions, ErrorMessage } from './styles'
+import { Logo } from '../Logo'
+import { FormWrap, LogoText, Input, Title, SubTitle, Actions, ErrorMessage } from './styles'
 import { StyledLink } from '../../styles/GlobalStyles'
 
 export const UserForm = ({ title, subTitle, onSubmit, isLoading, errorFirebase }) => {
@@ -27,7 +28,10 @@ export const UserForm = ({ title, subTitle, onSubmit, isLoading, errorFirebase }
 
   return (
     <FormWrap onSubmit={handleSubmit}>
-      <Logo>Meal Planner</Logo>
+
+      <LogoText>
+        <Logo size='64' />Meal Planner
+      </LogoText>
       <Title>{title}</Title>
       <SubTitle>{subTitle}</SubTitle>
       <Input type='text' placeholder='User' {...userName} />

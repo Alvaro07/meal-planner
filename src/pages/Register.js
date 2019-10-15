@@ -34,7 +34,7 @@ export const Register = () => {
     <UserForm
       isLoading={loading}
       title='Register'
-      subTitle='Enter your email & Password, register now and enjoy fully instafake image platform'
+      subTitle='Enter your email & Password, register now and enjoy fully Planner Menu platform'
       onSubmit={data => onRegister(data)}
       errorFirebase={error}
     />
