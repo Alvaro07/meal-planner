@@ -70,7 +70,14 @@ class Firebase {
             .set({
               displayName: userName,
               email: email,
-              menu: { monday: {}, tuesday: {}, wednesday: {}, thursday: {}, friday: {}, saturday: {}, sunday: {} },
+              menu: [
+                { day: 'Monday', order: 0 },
+                { day: 'Tuesday', order: 1 },
+                { day: 'Wednesday', order: 2 },
+                { day: 'Thursday', order: 3 },
+                { day: 'Friday', order: 4 },
+                { day: 'Saturday', order: 5 },
+                { day: 'Sunday', order: 6 }],
               shopList: []
             })
             .then(() => {
