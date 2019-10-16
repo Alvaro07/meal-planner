@@ -1,30 +1,41 @@
 import styled from 'styled-components'
+import { FaAlignJustify } from 'react-icons/fa'
+import { mediaQueries } from '../../styles/variables'
 
 export const Header = styled.header`
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
-
-  display: flex;
-  align-items: center;
-  padding: 10px;
+  background: white;
 `
 
-export const LogoText = styled.h1`
-  font-size: 3.2rem;
-  font-family: var(--patua);
-  letter-spacing: -1px;
-  padding: 5px 15px;
-  background-color: var(--yellow);
-  border-radius: 5px;
+export const HeaderWrap = styled.div`
+  margin: 0 auto;
+  max-width: 1280px;
   display: flex;
   align-items: center;
-  text-shadow: 1px 1px rgba(255,255,255,.4);
+  justify-content: space-between;
+  padding: 15px;
+`
 
-  & > svg {
-    margin-right: 10px;
-    -webkit-filter: drop-shadow( 1px 1px 0 rgba(255,255,255,.4));
-    filter: drop-shadow( 1px 1px 0 rgba(255,255,255,.4));
+export const LogoText = styled.h2`
+  font-size: 2.4rem;
+  font-family: var(--patua);
+  letter-spacing: -1px;
+
+  @media (min-width: ${mediaQueries.large}) {
+    font-size: 2.8rem;
+  }
+`
+
+export const BurguerIcon = styled(FaAlignJustify)`
+  font-size: 2.4rem;
+  margin-right: 15px;
+  transition: .2s all ease;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--blue)
   }
 `

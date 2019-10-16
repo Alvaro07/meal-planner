@@ -54,7 +54,7 @@ export const LoaderAnimated = styled.div`
   height: 100px;
   border-radius: 50%;
   border: 4px solid transparent;
-  border-top: 4px solid var(--orange);
+  border-top: 4px solid var(--blue);
   ${spin()}
 
   &::before,
@@ -70,7 +70,7 @@ export const LoaderAnimated = styled.div`
     left: 5px;
     right: 5px;
     bottom: 5px;
-    border-top-color: var(--orange);
+    border-top-color: var(--pink);
     ${spin({ time: '2.2s' })} /* animation: &(spin) 3.5s linear infinite; */
   }
 
@@ -79,7 +79,7 @@ export const LoaderAnimated = styled.div`
     left: 15px;
     right: 15px;
     bottom: 15px;
-    border-top-color: var(--orange);
+    border-top-color: var(--light-blue);
     ${spin({ time: '1.7s' })} /* animation: &(spin) 1.75s linear infinite; */
   }
 `

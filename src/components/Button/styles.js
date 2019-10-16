@@ -38,6 +38,15 @@ export const ButtonTag = styled.button`
         background-color: var(--light-blue);
       }
     `}
+  
+  ${props =>
+    props.terciary &&
+    css`
+      background-color: var(--pink);
+      &:hover {
+        background-color: var(--light-pink);
+      }
+    `}
 
   ${props =>
     props.round &&
