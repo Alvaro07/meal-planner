@@ -14,7 +14,17 @@ export const HelperClasses = createGlobalStyle`
   ${generateSpaces(['', '-top', '-right', '-bottom', '-left'], 'margin', 5)}
   ${generateSpaces(['', '-top', '-right', '-bottom', '-left'], 'padding', 5)}
 
+  .margin-left-auto { 
+    margin-left: auto;
+  }
+  
+  .margin-right-auto { 
+    margin-right: auto;
+  }
+
   .bold {
     font-weight: 700;
   }
+
+  
 `

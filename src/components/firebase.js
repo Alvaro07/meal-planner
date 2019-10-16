@@ -70,7 +70,7 @@ class Firebase {
             .set({
               displayName: userName,
               email: email,
-              menu: [],
+              menu: { monday: {}, tuesday: {}, wednesday: {}, thursday: {}, friday: {}, saturday: {}, sunday: {} },
               shopList: []
             })
             .then(() => {

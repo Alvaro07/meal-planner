@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import { Context } from '../../Context'
 import firebase from '../firebase'
-import { Logo } from '../Logo'
-import { Header as HeaderWrap, LogoText } from './styles'
+import { Button } from '../Button'
+import { Header as StickyHeader, HeaderWrap, LogoText, BurguerIcon } from './styles'
 
-export const Header = () => {
+export const Header = ({ title }) => {
   const { removeAuth } = useContext(Context)
 
   const signOut = () => {
@@ -13,10 +13,14 @@ export const Header = () => {
   }
 
   return (
-    <HeaderWrap>
-      <LogoText>
-        <Logo size='32' />Menu Planner
-      </LogoText>
-    </HeaderWrap>
+    <StickyHeader>
+      <HeaderWrap>
+        <BurguerIcon />
+        <LogoText>
+          {title}
+        </LogoText>
+        <Button terciary onClick={() => signOut()} text='Log out' />
+      </HeaderWrap>
+    </StickyHeader>
   )
 }
