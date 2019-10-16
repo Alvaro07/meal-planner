@@ -104,6 +104,12 @@ export const PageWrap = styled.div`
   text-rendering: optimizeSpeed;
 `
 
+export const Main = styled.main`
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 15px;
+`
+
 export const StyledLink = styled(Link)`
   color: var(--dark-grey);
   font-weight: 700;
