@@ -6,10 +6,10 @@ export const List = styled.ul`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 15px;
+    
   }
 
   @media (min-width: ${mediaQueries.large}) {
     grid-template-columns: repeat(4, 1fr);
   }
-
 `

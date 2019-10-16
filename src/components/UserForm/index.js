@@ -52,7 +52,7 @@ export const UserForm = ({ title, subTitle, onSubmit, isLoading, errorFirebase }
 
           <Actions>
             <StyledLink to={`${process.env.PUBLIC_URL}/login`}>Sign up</StyledLink>
-            <Button secondary text='Register and sign up' />
+            <Button text='Register and sign up' />
           </Actions>
         </>
       )}

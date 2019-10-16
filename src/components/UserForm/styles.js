@@ -62,7 +62,7 @@ export const Input = styled.input`
   border: 1px solid var(--grey);
 
   &:focus {
-    outline-color: var(--orange);
+    outline-color: var(--blue);
   }
 `
 
