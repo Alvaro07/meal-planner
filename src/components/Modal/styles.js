@@ -9,7 +9,6 @@ export const ModalContent = styled.div`
   height: 100%;
   overflow: auto;
   display: flex;
-  align-items: center;
   justify-content: center;
   background: white;
   padding: 20px;

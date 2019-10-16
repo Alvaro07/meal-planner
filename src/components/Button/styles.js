@@ -16,10 +16,10 @@ export const ButtonTag = styled.button`
   border-radius: 3px;
   cursor: pointer;
   transition: 0.2s all ease;
-  background-color: var(--orange);
-
+  background-color: var(--blue);
+  
   &:hover {
-    background-color: var(--light-orange);
+    background-color: var(--light-blue);
   }
 
   & svg:not(:last-child) {
@@ -33,9 +33,9 @@ export const ButtonTag = styled.button`
   ${props =>
     props.secondary &&
     css`
-      background-color: var(--blue);
+      background-color: var(--orange);
       &:hover {
-        background-color: var(--light-blue);
+        background-color: var(--light-orange);
       }
     `}
   

@@ -41,6 +41,6 @@ export const BurguerIcon = styled(FaAlignJustify)`
   cursor: pointer;
 
   &:hover {
-    color: var(--blue)
+    color: var(--pink)
   }
 `

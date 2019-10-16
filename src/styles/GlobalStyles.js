@@ -113,10 +113,10 @@ export const Main = styled.main`
 export const StyledLink = styled(Link)`
   color: var(--dark-grey);
   font-weight: 700;
-  transition: 0.3s all ease;
+  transition: 0.2s all ease;
   text-decoration: none;
 
   &:hover {
-    color: var(--dark-orange);
+    color: var(--pink);
   }
 `

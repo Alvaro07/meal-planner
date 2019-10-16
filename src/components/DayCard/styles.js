@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { mediaQueries } from '../../styles/variables'
 import { TiEdit } from 'react-icons/ti'
 
@@ -19,7 +19,8 @@ export const CardWrap = styled.li`
 `
 
 export const DayTitle = styled.h2`
-  font-size: 2rem;
+  font-size: 2.2rem;
+  color: var(--pink);
   font-family: var(--patua);
   display: flex;
   align-items: center;
@@ -34,20 +35,21 @@ export const EditIcon = styled(TiEdit)`
   font-size: 3.2rem;
   cursor: pointer;
   transition: .2s ease all;
+  color: var(--dark-grey);
 
   &:hover {
-    color: var(--blue)
+    color: var(--pink)
   }
 `
 
 export const Meal = styled.article`
-  padding: 15px 10px;
+  padding: 15px 0px;
   border-top: 1px dotted var(--grey);
 `
 
 export const Type = styled.h3`
-  font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
+  font-family: var(--patua);
 `
 
 export const Description = styled.h4``
