@@ -15,6 +15,22 @@ export const CardWrap = styled.li`
 
   @media (min-width: ${mediaQueries.medium}) {
     margin-bottom: 0;
+    &:nth-child(6) {
+      grid-column-start: 3;
+      grid-column-end: 4;
+    }
+  }
+
+  @media (min-width: ${mediaQueries.large}) {
+    grid-column-start: span 2;
+    &:nth-child(5) {
+      grid-column-start: 2;
+      grid-column-end: 4;
+    }
+    &:nth-child(6) {
+      grid-column-start: 4;
+      grid-column-end: 6;
+    }
   }
 `
 

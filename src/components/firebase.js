@@ -11,6 +11,8 @@ const config = {
   storageBucket: 'meal-planner-e2aa0.appspot.com'
 }
 
+const daysArray = [{ day: 'Monday' }, { day: 'Tuesday' }, { day: 'Wednesday' }, { day: 'Thursday' }, { day: 'Friday' }, { day: 'Saturday' }, { day: 'Sunday' }]
+
 class Firebase {
   constructor () {
     app.initializeApp(config)
@@ -70,14 +72,7 @@ class Firebase {
             .set({
               displayName: userName,
               email: email,
-              menu: [
-                { day: 'Monday', order: 0 },
-                { day: 'Tuesday', order: 1 },
-                { day: 'Wednesday', order: 2 },
-                { day: 'Thursday', order: 3 },
-                { day: 'Friday', order: 4 },
-                { day: 'Saturday', order: 5 },
-                { day: 'Sunday', order: 6 }],
+              menu: daysArray,
               shopList: []
             })
             .then(() => {
@@ -113,6 +108,24 @@ class Firebase {
           reject('No user is signed in.')
         }
       })
+    })
+  }
+
+  /**
+   *
+   * Get data function
+   * @param {string} collection - The collection you want to search.
+   * @param {string} doc - the document to access.
+   * @returns {object} The data you have searched.
+   */
+
+  getUserData (userName) {
+    return new Promise((resolve, reject) => {
+      const docRef = this.db.collection('users').doc(userName)
+      docRef
+        .get()
+        .then(doc => (doc.exists ? resolve(doc.data()) : reject('No such document!')))
+        .catch(error => reject(error))
     })
   }
 }

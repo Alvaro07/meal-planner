@@ -10,6 +10,6 @@ export const List = styled.ul`
   }
 
   @media (min-width: ${mediaQueries.large}) {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(8, 1fr);
   }
 `

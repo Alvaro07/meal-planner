@@ -32,6 +32,7 @@ export const CloseButton = styled.button`
   line-height: 0.8;
   cursor: pointer;
   transition: 0.2s all ease;
+  outline: none;
 
   &:hover {
     color: var(--pink);
