@@ -33,9 +33,9 @@ export const ButtonTag = styled.button`
   ${props =>
     props.secondary &&
     css`
-      background-color: var(--orange);
+      background-color: var(--green);
       &:hover {
-        background-color: var(--light-orange);
+        background-color: var(--light-green);
       }
     `}
   
@@ -48,12 +48,7 @@ export const ButtonTag = styled.button`
       }
     `}
 
-  ${props =>
-    props.round &&
-    css`
-      border-radius: 50%;
-      padding: 10px;
-    `}
+
 
   /*
    * Disabled styles

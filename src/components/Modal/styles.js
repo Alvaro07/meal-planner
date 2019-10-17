@@ -10,6 +10,7 @@ export const ModalContent = styled.div`
   overflow: auto;
   display: flex;
   justify-content: center;
+  align-items: center;
   background: white;
   padding: 20px;
   z-index: 10;
@@ -33,6 +34,6 @@ export const CloseButton = styled.button`
   transition: 0.2s all ease;
 
   &:hover {
-    color: var(--wine);
+    color: var(--pink);
   }
 `
