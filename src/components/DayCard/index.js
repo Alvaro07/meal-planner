@@ -33,7 +33,7 @@ export const DayCard = props => {
 
       {modalIsOpen &&
         <Modal onClose={() => setModalIsOpen(false)}>
-          <MealForm {...props} />
+          <MealForm {...props} handleClose={() => setModalIsOpen(false)} />
         </Modal>}
     </CardWrap>
   )
