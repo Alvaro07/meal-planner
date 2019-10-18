@@ -13,12 +13,20 @@ export const ShopList = props => {
   const { user } = useContext(Context)
   const product = useInputValue('')
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
   const [products, setProducts] = useState(props.list)
 
   const handleClick = e => {
     e.preventDefault()
+
+    if (products.filter(e => e.product === product.value).length > 0) {
+      setError('Ya existe')
+      return
+    }
+
     setProducts([...products, { product: product.value, checked: false }])
     product.setValue('')
+    setError(null)
   }
 
   const handleUpdate = e => {
@@ -27,6 +35,7 @@ export const ShopList = props => {
     const updateList = products.filter(e => e.checked === false)
 
     firebase.updateShopList(user.name, updateList).then(() => {
+      setProducts(updateList)
       setLoading(false)
     })
   }
@@ -49,6 +58,8 @@ export const ShopList = props => {
           </ListWrap>
           <Button text='Update list' big terciary onClick={e => handleUpdate(e)} />
         </>}
+
+      {error && <div>{error}</div>}
 
       {loading && <Loader fullContainer opacityBg />}
     </Main>
