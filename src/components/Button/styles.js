@@ -5,10 +5,9 @@ export const ButtonTag = styled.button`
   align-items: center;
 
   width: ${props => (props.fullWidth ? '100%' : null)};
-  padding: 0 15px;
-  height: 37px;
+  padding: 10px 15px;
 
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 700;
   color: white;
 
@@ -29,6 +28,21 @@ export const ButtonTag = styled.button`
   /*
    * Secondary styles
    */
+  
+  ${props =>
+    props.small &&
+    css`
+      padding: 0 10px;
+      height: 3.7rem;
+  `}
+
+  ${props =>
+    props.big &&
+    css`
+      padding: 10px 20px;
+      font-size: 1.6rem;
+  `}
+
 
   ${props =>
     props.secondary &&
@@ -60,6 +74,10 @@ export const ButtonTag = styled.button`
       cursor: default;
       pointer-events: none;
       background-color: var(--grey);
+
+      &:focus {
+        background-color: var(--grey);
+      }
     `}
 
 

@@ -4,25 +4,25 @@ import firebase from '../firebase'
 
 import { Form, Title, Subtitle, ButtonsMeal, Textarea, Footer } from './styles'
 import { Button } from '../Button'
-import { useInputValue } from '../../hooks/useInputValue'
 import { Loader } from '../Loader'
 
 export const MealForm = props => {
   const { user } = useContext(Context)
-  const mealDescription = useInputValue('')
-  const [type, setType] = useState('Breakfast')
+  const [description, setDescription] = useState(props.breakfast ? props.breakfast : '')
+  const [type, setType] = useState('breakfast')
   const [loading, setLoading] = useState(false)
 
   const handleSelect = (e, mealType) => {
     e.preventDefault()
     setType(mealType)
+    setDescription(props[mealType] ? props[mealType] : '')
   }
 
   const handleUpdate = e => {
     e.preventDefault()
     setLoading(true)
 
-    firebase.getUserData(user.name).then(data => {
+    firebase.updateMenu(user.name, props.day, type, description).then(() => {
       setLoading(false)
       props.handleClose()
     })
@@ -37,27 +37,33 @@ export const MealForm = props => {
         <Button
           text='Breakfast'
           extraClass='margin-right-10'
-          onClick={e => handleSelect(e, 'Breakfast')}
-          disabled={type === 'Breakfast' ? true : null}
+          onClick={e => handleSelect(e, 'breakfast')}
+          disabled={type === 'breakfast' ? true : null}
         />
+
         <Button
           text='Lunch'
           extraClass='margin-right-10'
-          onClick={e => handleSelect(e, 'Lunch')}
-          disabled={type === 'Lunch' ? true : null}
+          onClick={e => handleSelect(e, 'lunch')}
+          disabled={type === 'lunch' ? true : null}
         />
+
         <Button
           text='Dinner'
-          onClick={e => handleSelect(e, 'Dinner')}
-          disabled={type === 'Dinner' ? true : null}
+          onClick={e => handleSelect(e, 'dinner')}
+          disabled={type === 'dinner' ? true : null}
         />
       </ButtonsMeal>
 
-      <Textarea placeholder='Your favorite meal!' {...mealDescription} />
+      <Textarea
+        placeholder={`Your favorite meal for ${type}...`}
+        value={description}
+        onChange={e => setDescription(e.target.value)}
+      />
 
       <Footer>
-        <Button text='Close' terciary onClick={props.handleClose} />
-        <Button text='Update your day' secondary extraClass='margin-left-auto' />
+        {/* <Button text='Close' terciary onClick={props.handleClose} /> */}
+        <Button text='Update your day' secondary big />
       </Footer>
 
       {loading && <Loader fullContainer opacityBg />}
