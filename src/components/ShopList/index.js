@@ -11,9 +11,9 @@ import { Loader } from '../Loader'
 
 export const ShopList = props => {
   const { user } = useContext(Context)
-  const [loading, setLoading] = useState(false)
   const product = useInputValue('')
-  const [products, setProducts] = useState(props.list[0].shopList)
+  const [loading, setLoading] = useState(false)
+  const [products, setProducts] = useState(props.list)
 
   const handleClick = e => {
     e.preventDefault()
@@ -40,14 +40,14 @@ export const ShopList = props => {
     <Main shoplist>
       <SearchBox>
         <Input {...product} placeholder='Add product to the list' />
-        <Button text='Add' onClick={e => handleClick(e)} />
+        <Button text='Add' secondary onClick={e => handleClick(e)} />
       </SearchBox>
       {products.length > 0 &&
         <>
           <ListWrap>
             {products.map((item, i) => <ProductList key={i} {...item} onCheck={check => handleCheck(check, item)} />)}
           </ListWrap>
-          <Button text='Update list' big secondary onClick={e => handleUpdate(e)} />
+          <Button text='Update list' big terciary onClick={e => handleUpdate(e)} />
         </>}
 
       {loading && <Loader fullContainer opacityBg />}

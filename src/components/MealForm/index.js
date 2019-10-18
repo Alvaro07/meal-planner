@@ -63,7 +63,7 @@ export const MealForm = props => {
 
       <Footer>
         {/* <Button text='Close' terciary onClick={props.handleClose} /> */}
-        <Button text='Update your day' secondary big />
+        <Button text='Update your day' terciary big />
       </Footer>
 
       {loading && <Loader fullContainer opacityBg />}

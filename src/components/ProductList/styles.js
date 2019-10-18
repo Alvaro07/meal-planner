@@ -17,6 +17,10 @@ export const Label = styled.label`
   ${props => props.check && css`
     text-decoration: line-through
   `}
+
+  & > svg {
+    color: var(--green)
+  }
 `
 
 export const Checkbox = styled.input.attrs({ type: 'checkbox' })`

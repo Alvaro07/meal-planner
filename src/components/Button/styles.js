@@ -15,11 +15,14 @@ export const ButtonTag = styled.button`
   border-radius: 3px;
   cursor: pointer;
   transition: 0.2s all ease;
-  background-color: var(--blue);
+  background-color: var(--pink);
   
   &:hover {
-    background-color: var(--light-blue);
+    background-color: var(--light-pink);
   }
+
+  
+      
 
   & svg:not(:last-child) {
     margin-right: 10px;
@@ -47,18 +50,20 @@ export const ButtonTag = styled.button`
   ${props =>
     props.secondary &&
     css`
-      background-color: var(--green);
+      background-color: var(--blue);
+  
       &:hover {
-        background-color: var(--light-green);
+        background-color: var(--light-blue);
       }
     `}
   
   ${props =>
     props.terciary &&
     css`
-      background-color: var(--pink);
+      background-color: var(--dark-grey);
+
       &:hover {
-        background-color: var(--light-pink);
+        background-color: #333c
       }
     `}
 
@@ -75,7 +80,7 @@ export const ButtonTag = styled.button`
       pointer-events: none;
       background-color: var(--grey);
 
-      &:focus {
+      &:hover {
         background-color: var(--grey);
       }
     `}

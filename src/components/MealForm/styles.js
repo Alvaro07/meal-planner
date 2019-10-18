@@ -35,7 +35,7 @@ export const Textarea = styled.textarea`
   appearance: none;
 
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 12px 8px;
   border-radius: 2px;
   border: 1px solid var(--grey);

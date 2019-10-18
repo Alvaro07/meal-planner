@@ -15,7 +15,7 @@ export const ShoppingList = () => {
     <>
       <Header title='My shopping list' />
       {dataLoading && <Loader fullContainer />}
-      {!dataLoading && <ShopList list={userData} />}
+      {!dataLoading && <ShopList list={userData[0].shopList} />}
     </>
   )
 }
