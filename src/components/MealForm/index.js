@@ -56,14 +56,14 @@ export const MealForm = props => {
       </ButtonsMeal>
 
       <Textarea
-        placeholder='Your favorite meal!'
+        placeholder={`Your favorite meal for ${type}...`}
         value={description}
         onChange={e => setDescription(e.target.value)}
       />
 
       <Footer>
-        <Button text='Close' terciary onClick={props.handleClose} />
-        <Button text='Update your day' secondary extraClass='margin-left-auto' />
+        {/* <Button text='Close' terciary onClick={props.handleClose} /> */}
+        <Button text='Update your day' secondary big />
       </Footer>
 
       {loading && <Loader fullContainer opacityBg />}

@@ -23,7 +23,7 @@ export const Header = ({ title }) => {
         <LogoText>
           {title}
         </LogoText>
-        <Button terciary onClick={() => signOut()} icon={MdExitToApp} iconSize='24' />
+        <Button terciary small onClick={() => signOut()} icon={MdExitToApp} iconSize='24' />
       </HeaderWrap>
 
       {modalIsOpen &&

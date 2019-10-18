@@ -1,17 +1,21 @@
 import styled from 'styled-components'
+import { mediaQueries } from '../../styles/variables'
 
 export const Form = styled.form`
-  padding: 15px;
   width: 100%;
   max-width: 768px;
-  border: 1px dotted var(--grey);
+  padding-top: 1rem;
+
+  @media (min-width: ${mediaQueries.medium}) {
+    padding: 1.5rem;
+    border: 1px dotted var(--grey);
+  }
 `
 
 export const Title = styled.h3`
   font-size: 2.4rem;
   font-family: var(--patua);
-  padding-bottom: 10px;
-
+  padding-bottom: 10px; 
 `
 
 export const Subtitle = styled.p`
@@ -36,6 +40,7 @@ export const Textarea = styled.textarea`
   border-radius: 2px;
   border: 1px solid var(--grey);
   min-height: 150px;
+  font-size: 1.4rem;
 
   &:focus {
     outline-color: var(--blue);
@@ -44,5 +49,4 @@ export const Textarea = styled.textarea`
 
 export const Footer = styled.footer`
   display: flex;
-  
 `
