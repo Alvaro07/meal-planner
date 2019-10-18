@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle, css } from 'styled-components'
 import { Link } from '@reach/router'
 
 export const ResetStyle = createGlobalStyle`
@@ -108,6 +108,12 @@ export const Main = styled.main`
   max-width: 1280px;
   margin: 0 auto;
   padding: 15px;
+
+  ${props => props.shoplist &&
+    css`
+    max-width: 728px;
+    `
+  }
 `
 
 export const StyledLink = styled(Link)`

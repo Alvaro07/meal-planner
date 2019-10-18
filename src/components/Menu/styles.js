@@ -25,7 +25,7 @@ export const BoxLink = styled(Link)`
   border-radius: 5px;
   text-decoration: none;
   transition: .2s all ease;
-  background-color: var(--light-orange);
+  background-color: var(--pink);
   
   /* For icons */
   display: flex;
@@ -38,18 +38,18 @@ export const BoxLink = styled(Link)`
   }
   
   &:hover {
-    background-color: var(--orange);
+    background-color: var(--light-pink);
   }
 
   &:last-child {
-    background-color: var(--light-purple);
+    background-color: var(--blue);
     
     @media (min-width: ${mediaQueries.medium}) {
       margin-left: 15px;
     } 
 
     &:hover {
-      background-color: var(--purple);
+      background-color: var(--light-blue);
     }
   }
 
