@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ListItem, Checkbox, Label } from './styles'
 import { FaCheck } from 'react-icons/fa'
 
@@ -10,10 +10,14 @@ export const ProductList = ({ product, checked, onCheck, id }) => {
     onCheck(check, id)
   }
 
+  useEffect(() => {
+    setCheck(checked)
+  }, [checked])
+
   return (
     <ListItem>
-      <Label check={check}>
-        <Checkbox type='checkbox' checked={check} onChange={e => handleCheckboxChange(e)} />
+      <Label check={checked}>
+        <Checkbox type='checkbox' checked={checked} onChange={e => handleCheckboxChange(e)} />
         {product}
         {check &&
           <FaCheck size='18' className='margin-left-auto' />}
