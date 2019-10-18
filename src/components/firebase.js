@@ -150,6 +150,22 @@ class Firebase {
         .catch(error => reject(error.message))
     })
   }
+
+  /**
+   *
+   * Update weekly menu
+   */
+
+  async updateShopList (userName, list) {
+    return new Promise((resolve, reject) => {
+      const docRef = this.db.collection('users').doc(userName)
+      docRef.set({
+        shopList: list
+      }, { merge: true })
+        .then(() => resolve())
+        .catch(error => reject(error.message))
+    })
+  }
 }
 
 export default new Firebase()
