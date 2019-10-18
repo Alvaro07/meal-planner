@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.js": "/meal-planner/static/js/main.fc766eea.chunk.js",
+    "main.js.map": "/meal-planner/static/js/main.fc766eea.chunk.js.map",
+    "runtime-main.js": "/meal-planner/static/js/runtime-main.883e8dad.js",
+    "runtime-main.js.map": "/meal-planner/static/js/runtime-main.883e8dad.js.map",
+    "static/js/2.e401a701.chunk.js": "/meal-planner/static/js/2.e401a701.chunk.js",
+    "static/js/2.e401a701.chunk.js.map": "/meal-planner/static/js/2.e401a701.chunk.js.map",
+    "index.html": "/meal-planner/index.html",
+    "precache-manifest.7ffc0d7ddbe8a60e2762eedc2b068a9c.js": "/meal-planner/precache-manifest.7ffc0d7ddbe8a60e2762eedc2b068a9c.js",
+    "service-worker.js": "/meal-planner/service-worker.js"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.883e8dad.js",
+    "static/js/2.e401a701.chunk.js",
+    "static/js/main.fc766eea.chunk.js"
+  ]
+}
