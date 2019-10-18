@@ -128,6 +128,28 @@ class Firebase {
         .catch(error => reject(error))
     })
   }
+
+  /**
+   *
+   * Update weekly menu
+   */
+
+  async updateMenu (userName, day, type, mealDescription) {
+    let { menu } = await this.getUserData(userName)
+
+    const dayFilter = menu.filter(e => e.day === day)
+    dayFilter[0][type] = mealDescription
+    menu = menu.map(e => e.day === day ? dayFilter[0] : e)
+
+    return new Promise((resolve, reject) => {
+      const docRef = this.db.collection('users').doc(userName)
+      docRef.set({
+        menu: menu
+      }, { merge: true })
+        .then(() => resolve())
+        .catch(error => reject(error.message))
+    })
+  }
 }
 
 export default new Firebase()

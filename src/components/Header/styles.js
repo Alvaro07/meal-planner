@@ -8,6 +8,7 @@ export const Header = styled.header`
   left: 0;
   width: 100%;
   background: white;
+  z-index: 9;
   box-shadow: 0 1px 1px rgba(150,150,150,0.05), 
               0 1px 1px rgba(150,150,150,0.05), 
               0 2px 2px rgba(150,150,150,0.05), 
