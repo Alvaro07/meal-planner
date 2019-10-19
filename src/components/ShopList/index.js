@@ -24,9 +24,15 @@ export const ShopList = props => {
       return
     }
 
-    setProducts([...products, { product: product.value, checked: false }])
-    product.setValue('')
-    setError(null)
+    setLoading(true)
+    const updateList = [...products, { product: product.value, checked: false }]
+    setProducts(updateList)
+
+    firebase.updateShopList(user.name, updateList).then(() => {
+      setLoading(false)
+      setError(null)
+      product.setValue('')
+    })
   }
 
   const handleUpdate = e => {

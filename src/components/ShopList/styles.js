@@ -37,6 +37,7 @@ export const Input = styled.input.attrs({ type: 'text' })`
   padding: 10px 8px;
   border-radius: 3px;
   border: 1px solid var(--grey);
+  font-size: 1.4rem;
 
   &:focus {
     outline-color: var(--blue);

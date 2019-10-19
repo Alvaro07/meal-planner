@@ -62,7 +62,6 @@ export const MealForm = props => {
       />
 
       <Footer>
-        {/* <Button text='Close' terciary onClick={props.handleClose} /> */}
         <Button text='Update your day' terciary big />
       </Footer>
 
