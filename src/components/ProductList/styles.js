@@ -13,6 +13,7 @@ export const Label = styled.label`
   align-items: center;
   cursor: pointer;
   width: 100%;
+  font-size: 1.6rem;
 
   ${props => props.check && css`
     text-decoration: line-through

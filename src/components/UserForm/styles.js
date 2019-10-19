@@ -44,7 +44,7 @@ export const Title = styled.h2`
 `
 
 export const SubTitle = styled.p`
-  font-size: 14px;
+  font-size: 1.4rem;
   display: block;
   padding-bottom: 20px;
   text-shadow: 1px 1px white;
@@ -60,6 +60,7 @@ export const Input = styled.input`
   padding: 12px 8px;
   border-radius: 2px;
   border: 1px solid var(--grey);
+  font-size: 1.4rem;
 
   &:focus {
     outline-color: var(--blue);
@@ -77,4 +78,5 @@ export const ErrorMessage = styled.p`
   padding-top: 15px;
   color: var(--pink);
   text-align: center;
+  
 `
