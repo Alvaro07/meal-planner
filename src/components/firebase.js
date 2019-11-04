@@ -134,7 +134,29 @@ class Firebase {
    * Update weekly menu
    */
 
-  async updateMenu (userName, day, type, mealDescription) {
+  async updateMenu (userName, day, breakfast, lunch, dinner) {
+    let { menu } = await this.getUserData(userName)
+
+    const dayFilter = menu.filter(e => e.day === day)
+    dayFilter[0] = { day, breakfast, lunch, dinner }
+    menu = menu.map(e => e.day === day ? dayFilter[0] : e)
+
+    return new Promise((resolve, reject) => {
+      const docRef = this.db.collection('users').doc(userName)
+      docRef.set({
+        menu: menu
+      }, { merge: true })
+        .then(() => resolve())
+        .catch(error => reject(error.message))
+    })
+  }
+
+  /**
+   *
+   * Delete item update menu
+   */
+
+  async deleteItemMenu (userName, day, type, mealDescription) {
     let { menu } = await this.getUserData(userName)
 
     const dayFilter = menu.filter(e => e.day === day)
@@ -153,7 +175,7 @@ class Firebase {
 
   /**
    *
-   * Update weekly menu
+   * Update Shop list
    */
 
   async updateShopList (userName, list) {
