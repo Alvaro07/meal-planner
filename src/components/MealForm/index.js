@@ -8,21 +8,23 @@ import { Loader } from '../Loader'
 
 export const MealForm = props => {
   const { user } = useContext(Context)
-  const [description, setDescription] = useState(props.breakfast ? props.breakfast : '')
   const [type, setType] = useState('breakfast')
   const [loading, setLoading] = useState(false)
+
+  const [breakfast, setBreakfast] = useState(props.breakfast ? props.breakfast : '')
+  const [lunch, setLunch] = useState(props.lunch ? props.lunch : '')
+  const [dinner, setDinner] = useState(props.dinner ? props.dinner : '')
 
   const handleSelect = (e, mealType) => {
     e.preventDefault()
     setType(mealType)
-    setDescription(props[mealType] ? props[mealType] : '')
   }
 
   const handleUpdate = e => {
     e.preventDefault()
     setLoading(true)
 
-    firebase.updateMenu(user.name, props.day, type, description).then(() => {
+    firebase.updateMenu(user.name, props.day, breakfast, lunch, dinner).then(() => {
       setLoading(false)
       props.handleClose()
     })
@@ -55,11 +57,26 @@ export const MealForm = props => {
         />
       </ButtonsMeal>
 
-      <Textarea
-        placeholder={`Your favorite meal for ${type}...`}
-        value={description}
-        onChange={e => setDescription(e.target.value)}
-      />
+      {type === 'breakfast' &&
+        <Textarea
+          placeholder='Your favorite meal for breakfast...'
+          value={breakfast}
+          onChange={e => setBreakfast(e.target.value)}
+        />}
+
+      {type === 'lunch' &&
+        <Textarea
+          placeholder='Your favorite meal for lunch...'
+          value={lunch}
+          onChange={e => setLunch(e.target.value)}
+        />}
+
+      {type === 'dinner' &&
+        <Textarea
+          placeholder='Your favorite meal for dinner...'
+          value={dinner}
+          onChange={e => setDinner(e.target.value)}
+        />}
 
       <Footer>
         <Button text='Update your day' terciary big />

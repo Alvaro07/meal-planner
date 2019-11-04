@@ -18,7 +18,7 @@ export const DayCard = props => {
     e.preventDefault()
     setLoading(true)
 
-    firebase.updateMenu(user.name, props.day, type, '').then(() => {
+    firebase.deleteItemMenu(user.name, props.day, type, '').then(() => {
       setLoading(false)
     })
   }

@@ -6,7 +6,7 @@ import firebase from '../firebase'
 import { ProductList } from '../ProductList'
 import { Button } from '../Button'
 import { Main } from '../../styles/GlobalStyles'
-import { ListWrap, SearchBox, Input } from './styles'
+import { ListWrap, SearchBox, Input, Error } from './styles'
 import { Loader } from '../Loader'
 
 export const ShopList = props => {
@@ -18,9 +18,10 @@ export const ShopList = props => {
 
   const handleClick = e => {
     e.preventDefault()
+    if (product.value === '') return
 
-    if (products.filter(e => e.product === product.value).length > 0) {
-      setError('Ya existe')
+    if (products.filter(e => e.product.toLowerCase() === product.value.toLowerCase()).length > 0) {
+      setError('Try another product, this is already in the list')
       return
     }
 
@@ -43,6 +44,8 @@ export const ShopList = props => {
     firebase.updateShopList(user.name, updateList).then(() => {
       setProducts(updateList)
       setLoading(false)
+      setError(null)
+      product.setValue('')
     })
   }
 
@@ -65,7 +68,7 @@ export const ShopList = props => {
           <Button text='Update list' big terciary onClick={e => handleUpdate(e)} />
         </>}
 
-      {error && <div>{error}</div>}
+      {error && <Error>{error}</Error>}
 
       {loading && <Loader fullContainer opacityBg />}
     </Main>
