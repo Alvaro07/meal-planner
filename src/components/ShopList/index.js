@@ -18,7 +18,11 @@ export const ShopList = props => {
 
   const handleClick = e => {
     e.preventDefault()
-    if (product.value === '') return
+
+    if (product.value === '') {
+      setError('Please, introduce a valid product')
+      return
+    }
 
     if (products.filter(e => e.product.toLowerCase() === product.value.toLowerCase()).length > 0) {
       setError('Try another product, this is already in the list')
@@ -62,9 +66,16 @@ export const ShopList = props => {
       </SearchBox>
       {products.length > 0 &&
         <>
-          <ListWrap>
-            {products.map((item, i) => <ProductList key={i} {...item} onCheck={check => handleCheck(check, item)} />)}
-          </ListWrap>
+          {products.filter(e => !e.checked).length > 0 &&
+            <ListWrap>
+              {products.map((item, i) => !item.checked ? <ProductList key={i} {...item} onCheck={check => handleCheck(check, item)} /> : null)}
+            </ListWrap>}
+
+          {products.filter(e => e.checked).length > 0 &&
+            <ListWrap>
+              {products.map((item, i) => item.checked ? <ProductList key={i} {...item} onCheck={check => handleCheck(check, item)} /> : null)}
+            </ListWrap>}
+
           <Button text='Update list' big terciary onClick={e => handleUpdate(e)} />
         </>}
 
