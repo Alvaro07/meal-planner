@@ -17,6 +17,8 @@ function App () {
   const [initializing, setInitializing] = useState(true)
 
   useEffect(() => {
+    setInitializing(true)
+
     firebase
       .getUser()
       .then(data => {
