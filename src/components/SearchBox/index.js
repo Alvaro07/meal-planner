@@ -39,10 +39,7 @@ export const SearchBox = ({ inputValue, onClick, onUpdate, placeholder, validate
       product.setValue('')
 
       if (onUpdate) onUpdate(updateList)
-      if (validate) {
-        setValidateMessage(`"${product.value}" is added to your shoplist`)
-        setTimeout(() => setValidateMessage(null), 3000)
-      }
+      if (validate) setValidateMessage(`"${product.value}" is added to your shoplist`)
     })
   }
 
