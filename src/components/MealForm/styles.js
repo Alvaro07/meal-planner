@@ -64,15 +64,3 @@ export const AddProducts = styled.section`
     margin-bottom: 10px;
   }
 `
-
-export const Error = styled.p`
-  padding: 15px 0;
-  color: var(--pink);
-  font-weight: 700;
-`
-export const ValidateMessage = styled.p`
-  padding: 15px 0;
-  color: var(--green);
-  font-weight: 700;
-  
-`

@@ -26,9 +26,3 @@ background-color: white;
               0 4px 4px rgba(80,80,80,0.05), 
               0 8px 8px rgba(80,80,80,0.05);
 `
-
-export const Error = styled.p`
-  padding: 15px 0;
-  color: var(--pink);
-  font-weight: bold;
-`

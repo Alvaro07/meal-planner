@@ -6,7 +6,7 @@ import firebase from '../firebase'
 import { ProductList } from '../ProductList'
 import { Button } from '../Button'
 import { Main } from '../../styles/GlobalStyles'
-import { ListWrap, SearchCard, Error } from './styles'
+import { ListWrap, SearchCard } from './styles'
 import { Loader } from '../Loader'
 import { SearchBox } from '../SearchBox'
 
@@ -14,32 +14,7 @@ export const ShopList = props => {
   const { user } = useContext(Context)
   const product = useInputValue('')
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
   const [products, setProducts] = useState(props.list)
-
-  const handleClick = e => {
-    e.preventDefault()
-
-    if (product.value === '') {
-      setError('Please, introduce a valid product')
-      return
-    }
-
-    if (products.filter(e => e.product.toLowerCase() === product.value.toLowerCase()).length > 0) {
-      setError('Try another product, this is already in the list')
-      return
-    }
-
-    setLoading(true)
-    const updateList = [...products, { product: product.value, checked: false }]
-    setProducts(updateList)
-
-    firebase.updateShopList(user.name, updateList).then(() => {
-      setLoading(false)
-      setError(null)
-      product.setValue('')
-    })
-  }
 
   const handleUpdate = e => {
     e.preventDefault()
@@ -49,7 +24,6 @@ export const ShopList = props => {
     firebase.updateShopList(user.name, updateList).then(() => {
       setProducts(updateList)
       setLoading(false)
-      setError(null)
       product.setValue('')
     })
   }
@@ -62,7 +36,7 @@ export const ShopList = props => {
   return (
     <Main shoplist>
       <SearchCard>
-        <SearchBox inputValue={product} placeholder='Add product to the list' onClick={e => handleClick(e)} />
+        <SearchBox placeholder='Add product to the list' onUpdate={data => setProducts(data)} />
       </SearchCard>
 
       {products.length > 0 &&
@@ -79,8 +53,6 @@ export const ShopList = props => {
 
           <Button text='Update list' big terciary onClick={e => handleUpdate(e)} />
         </>}
-
-      {error && <Error>{error}</Error>}
 
       {loading && <Loader fullContainer opacityBg />}
     </Main>
