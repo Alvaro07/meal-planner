@@ -6,8 +6,9 @@ import firebase from '../firebase'
 import { ProductList } from '../ProductList'
 import { Button } from '../Button'
 import { Main } from '../../styles/GlobalStyles'
-import { ListWrap, SearchBox, Input, Error } from './styles'
+import { ListWrap, SearchCard, Error } from './styles'
 import { Loader } from '../Loader'
+import { SearchBox } from '../SearchBox'
 
 export const ShopList = props => {
   const { user } = useContext(Context)
@@ -60,10 +61,10 @@ export const ShopList = props => {
 
   return (
     <Main shoplist>
-      <SearchBox>
-        <Input {...product} placeholder='Add product to the list' />
-        <Button text='Add' secondary onClick={e => handleClick(e)} />
-      </SearchBox>
+      <SearchCard>
+        <SearchBox inputValue={product} placeholder='Add product to the list' onClick={e => handleClick(e)} />
+      </SearchCard>
+
       {products.length > 0 &&
         <>
           {products.filter(e => !e.checked).length > 0 &&
