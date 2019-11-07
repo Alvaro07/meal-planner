@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { mediaQueries } from '../../styles/variables'
 
-export const Form = styled.form`
+export const Wrap = styled.section`
   width: 100%;
   max-width: 768px;
   padding-top: 1rem;
@@ -10,6 +10,10 @@ export const Form = styled.form`
     padding: 1.5rem;
     border: 1px dotted var(--grey);
   }
+`
+
+export const Form = styled.form`
+  padding-bottom: 20px;
 `
 
 export const Title = styled.h3`
@@ -49,4 +53,26 @@ export const Textarea = styled.textarea`
 
 export const Footer = styled.footer`
   display: flex;
+`
+
+export const AddProducts = styled.section`
+  padding: 20px 0;
+
+  h5 {
+    font-family: var(--patua);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+`
+
+export const Error = styled.p`
+  padding: 15px 0;
+  color: var(--pink);
+  font-weight: 700;
+`
+export const ValidateMessage = styled.p`
+  padding: 15px 0;
+  color: var(--green);
+  font-weight: 700;
+  
 `
