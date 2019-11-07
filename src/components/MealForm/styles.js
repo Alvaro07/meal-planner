@@ -43,7 +43,7 @@ export const Textarea = styled.textarea`
   padding: 12px 8px;
   border-radius: 2px;
   border: 1px solid var(--grey);
-  min-height: 150px;
+  min-height: 100px;
   font-size: 1.4rem;
 
   &:focus {
